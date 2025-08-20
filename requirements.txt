@@ -1,8 +1,8 @@
-Flask==3.0.3
-Flask-Login==0.7.0
-Flask-WTF==1.1.1
-Flask-SQLAlchemy==3.0.3
-sympy==1.12
-numpy==1.26.4
-gunicorn==22.0.0
-python-dotenv==1.0.0
+Flask
+Flask-Login
+Flask-WTF
+Flask-SQLAlchemy
+sympy
+numpy
+gunicorn
+python-dotenv
