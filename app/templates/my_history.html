@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+<h5 class="mb-3">My History</h5>
+
+<div class="table-responsive">
+  <table class="table table-sm table-striped table-hover align-middle">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>When</th>
+        <th>Action</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+      <tr>
+        <td>{{ r.id }}</td>
+        <td>{{ r.ts|datetimeformat }}</td>
+        <td>{{ r.action }}</td>
+        <td><pre class="small m-0">{{ r.result }}</pre></td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="4" class="text-center text-muted">
+          No history available.
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
