@@ -1,0 +1,64 @@
+{% extends 'base.html' %} {% block content %}
+<h4>Dashboard</h4>
+<div class="row g-3">
+  <!-- Pie Chart -->
+  <div class="col-12 col-md-6">
+    <div class="card p-3">
+      <canvas id="chartActions" class="w-100" style="height: 300px"></canvas>
+    </div>
+  </div>
+
+  <!-- Plot Area -->
+  <div class="col-12 col-md-6">
+    <div class="card p-3" id="plotArea" style="min-height: 300px">
+      Loading...
+    </div>
+  </div>
+</div>
+
+<script>
+  fetch("/_stats")
+    .then((r) => r.json())
+    .then((data) => {
+      const labels = Object.keys(data.counts);
+      const values = Object.values(data.counts);
+
+      // Pie Chart
+      const ctx = document.getElementById("chartActions").getContext("2d");
+      new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              data: values,
+              backgroundColor: [
+                "#00d4ff",
+                "#ff7f50",
+                "#ffcd56",
+                "#4bc0c0",
+                "#9966ff",
+                "#ff6384",
+              ],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: "bottom",
+            },
+          },
+        },
+      });
+
+      // Plot Area
+      document.getElementById("plotArea").innerHTML =
+        "<div class='p-3 text-center'>Total actions: <strong>" +
+        data.total +
+        "</strong></div>";
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,116 @@
+/* Body & Typography */
+body {
+  background: linear-gradient(180deg, #071422, #0b1b27);
+  color: #e6eef6;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto;
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+/* Navbar */
+.navbar-brand {
+  color: #00d4ff !important;
+  font-weight: 700;
+}
+
+/* Card & Jumbotron */
+.card,
+.jumbotron {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+  color: #e6eef6;
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 576px) {
+  .card,
+  .jumbotron {
+    padding: 1.5rem 1rem;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 1rem;
+    padding: 6px;
+  }
+
+  .btn-primary,
+  .btn-success {
+    font-size: 1rem;
+  }
+}
+
+/* Inputs & Buttons */
+input,
+select,
+textarea,
+button {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  color: #e6eef6;
+  border: 1px solid #00d4ff44;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  input,
+  select,
+  textarea,
+  button {
+    width: auto;
+  }
+}
+
+/* Buttons */
+.btn-primary,
+.btn-success {
+  color: #071422 !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.03em;
+}
+
+/* Paragraphs & Labels */
+p,
+label,
+.lead {
+  color: #e6eef6;
+  font-size: 1.08rem;
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive chart containers */
+.chart-container {
+  width: 100%;
+  max-width: 100%;
+  height: 400px;
+}
